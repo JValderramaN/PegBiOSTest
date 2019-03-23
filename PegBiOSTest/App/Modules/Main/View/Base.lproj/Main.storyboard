@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dyv-9x-71M">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Peg iOS Test Forecast-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="PegBiOSTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Select a City and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCM-H7-MeV">
+                                <rect key="frame" x="20" y="84" width="171.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="pE3-db-d3G">
+                                <rect key="frame" x="0.0" y="124.5" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="oxp-bP-DS0"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="v86-re-QjN"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQq-Ac-3oT">
+                                <rect key="frame" x="0.0" y="340.5" width="320" height="227.5"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="4QB-ha-kL8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pKf-FB-Fd3"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jQq-Ac-3oT" firstAttribute="top" secondItem="pE3-db-d3G" secondAttribute="bottom" id="8Th-KH-fRq"/>
+                            <constraint firstItem="pE3-db-d3G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Au-Ie-sWM"/>
+                            <constraint firstItem="jQq-Ac-3oT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DVv-lW-VtS"/>
+                            <constraint firstItem="pE3-db-d3G" firstAttribute="top" secondItem="yCM-H7-MeV" secondAttribute="bottom" constant="20" id="LTd-XR-gLO"/>
+                            <constraint firstItem="pE3-db-d3G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NBt-mC-WZD"/>
+                            <constraint firstItem="yCM-H7-MeV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ptd-fG-aep"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jQq-Ac-3oT" secondAttribute="trailing" id="cdK-fn-g3E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yCM-H7-MeV" secondAttribute="trailing" constant="20" id="eYt-mC-GPV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pE3-db-d3G" secondAttribute="bottom" id="fgC-C4-MbL"/>
+                            <constraint firstItem="yCM-H7-MeV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="n8b-sC-2sG"/>
+                            <constraint firstAttribute="bottom" secondItem="jQq-Ac-3oT" secondAttribute="bottom" id="qg1-VH-zPJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Peg iOS Test Forecast" id="eKu-vA-cqL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dBh-oa-QKK">
+                            <connections>
+                                <action selector="searchForecastButtonTapped:" destination="BYZ-38-t0r" id="Eu2-UB-6Ld"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="regionPicker" destination="pE3-db-d3G" id="eXm-OE-jcl"/>
+                        <outlet property="searchForecastButton" destination="dBh-oa-QKK" id="QBl-Ye-fYS"/>
+                        <outlet property="timePicker" destination="jQq-Ac-3oT" id="u0u-zX-9A7"/>
+                        <segue destination="d6d-tW-SYP" kind="show" identifier="showForecasts" id="Dib-pB-5zV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.25" y="32.74647887323944"/>
+        </scene>
+        <!--Forecast Table View Controller-->
+        <scene sceneID="aL3-Nb-eyc">
+            <objects>
+                <tableViewController id="d6d-tW-SYP" customClass="ForecastTableViewController" customModule="PegBiOSTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nKh-me-x2C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="forecastCell" id="b2L-Kn-9e5" customClass="ForecastTableViewCell" customModule="PegBiOSTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b2L-Kn-9e5" id="Asf-ez-coh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7A-KW-kum">
+                                            <rect key="frame" x="116.5" y="13" width="87.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="X7A-KW-kum" firstAttribute="centerX" secondItem="Asf-ez-coh" secondAttribute="centerX" id="Xhw-it-MB2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X7A-KW-kum" secondAttribute="trailing" constant="10" id="A54-RJ-fiD"/>
+                                    <constraint firstItem="X7A-KW-kum" firstAttribute="centerY" secondItem="b2L-Kn-9e5" secondAttribute="centerY" id="Vhb-hz-szV"/>
+                                    <constraint firstItem="X7A-KW-kum" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2L-Kn-9e5" secondAttribute="leading" constant="10" id="acl-z5-2Jv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="temperatureLabel" destination="X7A-KW-kum" id="u0X-CH-NsA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d6d-tW-SYP" id="CUb-fe-0iG"/>
+                            <outlet property="delegate" destination="d6d-tW-SYP" id="gPd-rP-WRl"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2c-0t-g5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961.25" y="32.74647887323944"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="beJ-Ib-8Ms">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dyv-9x-71M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TFe-CO-obk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jI8-Bq-UGs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJK-lG-ueV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="33"/>
+        </scene>
+    </scenes>
+</document>
